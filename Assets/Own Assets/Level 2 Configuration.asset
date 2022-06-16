@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 681d59822bef4584e9a7a090f5a174f2, type: 3}
   m_Name: Level 2 Configuration
   m_EditorClassIdentifier: 
-  enemyAmount: 7
   enemyMaxHealth: 50
   enemyPositions:
   - {x: -4, y: 0.6, z: 4}
@@ -22,3 +21,7 @@ MonoBehaviour:
   - {x: 4, y: 0.6, z: 2}
   - {x: 4, y: 0.6, z: 0}
   - {x: 0, y: 0.6, z: 4}
+  prefabEnemies:
+  - {fileID: 7090564081121906553, guid: 8f6cc96d2339f1c43b3adcb68f2c8ba2, type: 3}
+  - {fileID: 8055783182550386887, guid: 49be3340fe6a06247954eb247e6e565a, type: 3}
+  - {fileID: 6215002946860875030, guid: 75e0c7be77723d04f89d63ba4ccdf287, type: 3}

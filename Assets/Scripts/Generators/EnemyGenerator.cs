@@ -9,10 +9,8 @@ namespace ScriptableObjectTest
     {
         [Header("References")]
         [SerializeField] LevelConfiguration levelConfiguration;
-        [SerializeField] GameObject prefabEnemy = null;
 
         List<GameObject> enemyList;
-
 
 
         void Awake()
@@ -24,7 +22,7 @@ namespace ScriptableObjectTest
         {
             for (int i = 0; i < levelConfiguration.GetEnemyAmount(); i++)
             {
-                GameObject newEnemy = Instantiate(prefabEnemy);
+                GameObject newEnemy = levelConfiguration.GenerateEnemy();
 
 
                 enemyList.Add(newEnemy);
@@ -34,12 +32,6 @@ namespace ScriptableObjectTest
             {
                 enemyList[i].transform.position = levelConfiguration.GetEnemyPositions()[i];
             }
-        }
-
-
-        void Update()
-        {
-
         }
     }
 }

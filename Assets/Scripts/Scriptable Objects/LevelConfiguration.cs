@@ -6,23 +6,24 @@ namespace ScriptableObjectTest
     [CreateAssetMenu(menuName = "Level Configuration")]
     public class LevelConfiguration : ScriptableObject
     {
-        [SerializeField] int enemyAmount = 0;
-        [SerializeField] int enemyMaxHealth = 0;
+        [Header("References")]
         [SerializeField] Vector3[] enemyPositions;
+        [SerializeField] GameObject[] prefabEnemies;
 
 
 
         public int GetEnemyAmount()
         {
-            return enemyAmount;
-        }
-        public int GetEnemyMaxHealth()
-        {
-            return enemyMaxHealth;
+            return enemyPositions.Length;
         }
         public Vector3[] GetEnemyPositions()
         {
             return enemyPositions;
+        }
+        public GameObject GenerateEnemy()
+        {
+            // Retorno una instancia de un prefab del arreglo con posición aleatoria.
+            return Instantiate(prefabEnemies[Random.Range(0, prefabEnemies.Length)]);
         }
     }
 }
